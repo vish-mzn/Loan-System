@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b1970bc6-9b73-4851-85d6-052b20dc800c",
+		"name": "TestDb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7306410"
+	},
+	"item": [
+		{
+			"name": "getAll_pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_loanApplication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/loans/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"loans",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_loanApplication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"PENDING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_loanApplication",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"REJECTED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/loans/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"loans",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mockoon server api",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10\r\n\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/mockcredit/score/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"mockcredit",
+						"score",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "ID005"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
