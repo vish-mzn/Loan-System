@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "b1970bc6-9b73-4851-85d6-052b20dc800c",
-		"name": "TestDb",
+		"name": "LoanSystem",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "7306410"
 	},
@@ -9,8 +9,67 @@
 		{
 			"name": "getAll_pagination",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret321",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "maybak",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_loanApplication",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret321",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "maybak",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"PENDING\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:9090/api/loans",
 					"protocol": "http",
@@ -46,37 +105,8 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "6"
+							"value": "5"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create_loanApplication",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"PENDING\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:9090/api/loans",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9090",
-					"path": [
-						"api",
-						"loans"
 					]
 				}
 			},
@@ -85,11 +115,26 @@
 		{
 			"name": "update_loanApplication",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "maybank",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"REJECTED\"\r\n}",
+					"raw": "{\r\n    \"applicantName\": \"Thai Hau\",\r\n    \"applicantIdNumber\": \"ID005\",\r\n    \"amount\": 2000.00,\r\n    \"termInMonths\": 10,\r\n    \"status\": \"DISBURSED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
