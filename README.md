@@ -96,6 +96,7 @@ This is a Spring Boot-based RESTful application developed for managing loan appl
 ✅ 1. Clone the repository
 
 git clone https://github.com/vish-mzn/Loan-System.git
+
 cd Loan-System
 
 
